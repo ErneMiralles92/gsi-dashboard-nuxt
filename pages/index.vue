@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <AppIcon color="green">mdi-account</AppIcon>
-    <!-- <AppButton rounded color="#1976D2" text-color="black">My Text</AppButton> -->
+    <AppButton rounded color="#1976D2" text-color="black">My Text</AppButton>
   </div>
 </template>
 

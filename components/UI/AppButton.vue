@@ -1,0 +1,162 @@
+<template>
+  <button
+    v-bind="$attrs"
+    type="button"
+    class="app-btn"
+    :class="btnClasses"
+    :style="customStyle"
+    v-on="$listeners"
+  >
+    <div class="app-btn__content">
+      <slot name="default"> </slot>
+    </div>
+  </button>
+</template>
+
+<script>
+export default {
+  inheritAttrs: false,
+  props: {
+    text: {
+      type: Boolean,
+      default: false,
+    },
+    rounded: {
+      type: Boolean,
+      default: false,
+    },
+    icon: {
+      type: Boolean,
+      default: false,
+    },
+    depressed: {
+      type: Boolean,
+      default: false,
+    },
+    color: {
+      type: String,
+      default: '#9FA8DA',
+    },
+    textColor: {
+      type: String,
+      default: 'black',
+    },
+  },
+  computed: {
+    regular() {
+      return !this.text && !this.rounded && !this.icon && !this.depressed
+    },
+    btnClasses() {
+      const variants = {
+        regular: this.regular,
+        text: this.text,
+        icon: this.icon,
+        rounded: this.rounded,
+        depressed: this.depressed,
+      }
+      const btnClasses = {
+        regular: ['app-btn-regular'],
+        text: ['app-btn-text'],
+        icon: ['app-btn-icon', 'app-btn-flat', 'app-btn-round'],
+        rounded: ['app-btn-rounded'],
+        depressed: ['app-btn-depressed'],
+      }
+      const classes = []
+      Object.keys(variants)
+        .filter((key) => variants[key])
+        .forEach((key) => classes.push(...btnClasses[key]))
+      console.log({ classes })
+      return classes
+    },
+    customStyle() {
+      const styles = {
+        color: this.textColor,
+        backgroundColor: this.color,
+        borderColor: this.color,
+      }
+
+      return styles
+    },
+  },
+}
+</script>
+
+<style scoped>
+.app-btn {
+  cursor: pointer;
+  align-items: center;
+  border-radius: 4px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-weight: 500;
+  justify-content: center;
+  outline: 0;
+  border-style: none;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 0.28s;
+  transition-property: box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.app-btn__content {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  line-height: normal;
+  position: relative;
+}
+
+.app-btn.app-btn-regular {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.app-btn.app-btn-regular:active {
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
+    0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.app-btn.app-btn-depressed {
+  box-shadow: none !important;
+}
+
+.app-btn.app-btn-rounded {
+  border-radius: 28px;
+}
+
+.app-btn-flat,
+.app-btn-text {
+  background-color: transparent !important;
+}
+
+.app-btn-text:hover {
+  background-color: rgba(245, 245, 245, 0.8) !important;
+}
+
+.app-btn:not(.app-btn-round) {
+  min-width: 64px;
+}
+.app-btn-round {
+  border-radius: 50%;
+}
+
+.app-btn-icon {
+  height: 36px;
+  width: 36px;
+}
+
+.app-btn-icon:hover {
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
+    0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+</style>
