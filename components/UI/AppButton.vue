@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'AppButton',
   inheritAttrs: false,
   props: {
     text: {
@@ -41,32 +42,27 @@ export default {
       type: String,
       default: 'black',
     },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     regular() {
       return !this.text && !this.rounded && !this.icon && !this.depressed
     },
     btnClasses() {
-      const variants = {
-        regular: this.regular,
-        text: this.text,
-        icon: this.icon,
-        rounded: this.rounded,
-        depressed: this.depressed,
-      }
       const btnClasses = {
-        regular: ['app-btn-regular'],
-        text: ['app-btn-text'],
-        icon: ['app-btn-icon', 'app-btn-flat', 'app-btn-round'],
-        rounded: ['app-btn-rounded'],
-        depressed: ['app-btn-depressed'],
+        'app-btn-regular': this.regular,
+        'app-btn-text': this.text,
+        'app-btn-icon': this.icon,
+        // 'app-btn-flat': this.icon,
+        'app-btn-round': this.icon,
+        'app-btn-rounded': this.rounded,
+        'app-btn-depressed': this.depressed,
+        'app-btn-disabled': this.disabled,
       }
-      const classes = []
-      Object.keys(variants)
-        .filter((key) => variants[key])
-        .forEach((key) => classes.push(...btnClasses[key]))
-      console.log({ classes })
-      return classes
+      return btnClasses
     },
     customStyle() {
       const styles = {
@@ -158,5 +154,20 @@ export default {
 .app-btn-icon:hover {
   box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
     0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.app-btn.app-btn-disabled:not(.app-btn-flat):not(.app-btn-text) {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.app-btn-disabled {
+  box-shadow: none;
+  pointer-events: none;
+  cursor: default;
+}
+
+.app-btn.app-btn-disabled,
+.app-btn.app-btn-disabled .app-icon {
+  color: rgba(0, 0, 0, 0.26) !important;
 }
 </style>
