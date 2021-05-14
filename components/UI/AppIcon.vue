@@ -2,7 +2,7 @@
   <i
     v-bind="$attrs"
     aria-hidden="true"
-    class="mdi"
+    class="app-icon mdi"
     :class="{
       [mdiIconClass]: true,
     }"
@@ -22,6 +22,7 @@ const SIZE_MAP = {
 }
 
 export default {
+  name: 'AppIcon',
   inheritAttrs: false,
   props: {
     color: {
@@ -87,4 +88,7 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.app-icon {
+}
+</style>

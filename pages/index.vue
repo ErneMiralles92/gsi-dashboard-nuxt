@@ -1,12 +1,22 @@
 <template>
   <div class="container">
-    <AppIcon color="green">mdi-account</AppIcon>
-    <AppButton rounded color="#1976D2" text-color="black">My Text</AppButton>
+    <AppSwitch v-model="switchModel"></AppSwitch>
+    <AppCard hover height="5rem" width="50%" max-width="300"></AppCard>
+    <AppButton text color="#1976D2" text-color="black">My Text</AppButton>
+    <AppButton icon rounded color="cyan" text-color="white"
+      ><AppIcon color="green">mdi-account</AppIcon></AppButton
+    >
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      switchModel: true,
+    }
+  },
+}
 </script>
 
 <style>
