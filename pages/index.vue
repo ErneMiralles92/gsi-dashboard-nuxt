@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <AppProgressBar
+      color="#6D4C41"
+      rounded
+      value="68"
+      width="400"
+      height="16"
+    ></AppProgressBar>
     <AppSwitch v-model="switchModel"></AppSwitch>
     <AppCard hover height="5rem" width="50%" max-width="300"></AppCard>
     <AppButton text color="#1976D2" text-color="black">My Text</AppButton>
@@ -24,6 +31,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
