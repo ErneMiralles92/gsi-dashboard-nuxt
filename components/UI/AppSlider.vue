@@ -30,7 +30,13 @@
 import AppIcon from './AppIcon.vue'
 import AppButton from './AppButton.vue'
 
+// const modeMap = {
+//   slider: 'slider',
+//   carousel: 'carousel',
+// }
+
 export default {
+  name: 'AppSlider',
   components: {
     AppButton,
     AppIcon,

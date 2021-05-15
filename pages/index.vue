@@ -1,5 +1,16 @@
 <template>
   <div class="container">
+    <AppCarousel style="width: 400px">
+      <AppCard
+        v-for="i in 7"
+        :key="i"
+        hover
+        height="5rem"
+        min-width="100px"
+        style="margin: 16px"
+        >{{ i }}
+      </AppCard>
+    </AppCarousel>
     <AppSlider style="width: 400px">
       <AppCard
         v-for="i in 7"
@@ -8,7 +19,8 @@
         height="5rem"
         min-width="100px"
         style="margin: 16px"
-      ></AppCard>
+        >{{ i }}
+      </AppCard>
     </AppSlider>
     <AppProgressBar
       color="#6D4C41"

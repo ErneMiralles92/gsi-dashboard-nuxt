@@ -13,6 +13,7 @@
 import { convertToUnit } from '~/utils/helpers'
 
 export default {
+  name: 'AppProgressBar',
   props: {
     value: {
       type: [Number, String],
