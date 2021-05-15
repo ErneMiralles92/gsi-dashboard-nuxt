@@ -34,10 +34,10 @@ export default {
     //   type: [Number, String],
     //   default: false,
     // },
-    // minWidth: {
-    //   type: [Number, String],
-    //   default: false,
-    // },
+    minWidth: {
+      type: [Number, String],
+      default: '64px',
+    },
     width: {
       type: [Number, String],
       default: '',
@@ -54,6 +54,7 @@ export default {
       const classes = {
         height: convertToUnit(this.height),
         width: convertToUnit(this.width),
+        'min-width': convertToUnit(this.minWidth),
         'max-width': convertToUnit(this.maxWidth),
       }
       return classes
