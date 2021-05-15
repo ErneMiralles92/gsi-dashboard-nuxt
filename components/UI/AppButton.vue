@@ -170,4 +170,8 @@ export default {
 .app-btn.app-btn-disabled .app-icon {
   color: rgba(0, 0, 0, 0.26) !important;
 }
+
+.app-btn:active {
+  opacity: 0.6;
+}
 </style>
