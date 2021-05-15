@@ -1,5 +1,15 @@
 <template>
   <div class="container">
+    <AppSlider style="width: 400px">
+      <AppCard
+        v-for="i in 7"
+        :key="i"
+        hover
+        height="5rem"
+        min-width="100px"
+        style="margin: 16px"
+      ></AppCard>
+    </AppSlider>
     <AppProgressBar
       color="#6D4C41"
       rounded
@@ -10,9 +20,9 @@
     <AppSwitch v-model="switchModel"></AppSwitch>
     <AppCard hover height="5rem" width="50%" max-width="300"></AppCard>
     <AppButton text color="#1976D2" text-color="black">My Text</AppButton>
-    <AppButton icon rounded color="cyan" text-color="white"
-      ><AppIcon color="green">mdi-account</AppIcon></AppButton
-    >
+    <AppButton icon rounded color="cyan" text-color="white">
+      <AppIcon color="green">mdi-account</AppIcon>
+    </AppButton>
   </div>
 </template>
 
