@@ -14,9 +14,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    color: {
+      type: String,
+      default: 'white',
+    },
     height: {
       type: [Number, String],
-      default: 64,
+      default: 'fit-content',
+    },
+    borderRadius: {
+      type: [Number, String],
+      default: 24,
     },
     hover: {
       type: Boolean,
@@ -56,6 +64,9 @@ export default {
         width: convertToUnit(this.width),
         'min-width': convertToUnit(this.minWidth),
         'max-width': convertToUnit(this.maxWidth),
+        'border-radius': convertToUnit(this.borderRadius),
+        'background-color': this.color,
+        'border-color': this.color,
       }
       return classes
     },
@@ -71,8 +82,7 @@ export default {
   outline: none;
   position: relative;
   white-space: normal;
-  padding: 16px 20px;
-  border-radius: 8px;
+  padding: 16px 16px;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
