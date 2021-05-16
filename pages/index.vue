@@ -1,6 +1,14 @@
 <template>
-  <div class="container">
-    <AppCarousel style="width: 400px">
+  <div class="app-row my-n6 mx-n3">
+    <div class="app-column py-6 px-3" style="flex: 1">
+      <Cards />
+      <AppCard class="mt-6" height="10rem" width="100%"> </AppCard>
+    </div>
+    <div class="app-column py-6 px-3" style="flex: 1">
+      <AppCard height="10rem" width="100%"> </AppCard>
+      <AppCard class="mt-6" height="10rem" width="100%"> </AppCard>
+    </div>
+    <!-- <AppCarousel style="width: 400px">
       <AppCard
         v-for="i in 7"
         :key="i"
@@ -30,11 +38,10 @@
       height="16"
     ></AppProgressBar>
     <AppSwitch v-model="switchModel"></AppSwitch>
-    <AppCard hover height="5rem" width="50%" max-width="300"></AppCard>
     <AppButton text color="#1976D2" text-color="black">My Text</AppButton>
     <AppButton icon rounded color="cyan" text-color="white">
       <AppIcon color="green">mdi-account</AppIcon>
-    </AppButton>
+    </AppButton> -->
   </div>
 </template>
 
@@ -48,36 +55,4 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style scoped></style>
