@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+/* Grid */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.app-main {
+  width: 100%;
+}
+
+.app-column {
+  display: flex !important;
+  flex-direction: column !important;
+  max-width: 100% !important;
+}
+
+.app-row {
+  display: flex !important;
+}
+
+.app-justify-start {
+  justify-content: flex-start !important;
+}
+
+.app-justify-end {
+  justify-content: flex-end !important;
+}
+
+.app-justify-center {
+  justify-content: center !important;
+}
+
+.app-justify-space-between {
+  justify-content: space-between !important;
+}
+
+.app-align-start {
+  align-items: flex-start !important;
+}
+
+.app-align-end {
+  align-items: flex-end !important;
+}
+
+.app-align-center {
+  align-items: center !important;
+}
+.app-align-stretch {
+  align-items: stretch !important;
+}
+
+.app-align-space-between {
+  align-items: space-between !important;
+}
+
+/* Spacing */
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mx-n3 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.my-n6 {
+  margin-top: -24px;
+  margin-bottom: -24px;
+}
+
+.py-6 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.fill-height {
+  height: 100%;
+}
+
+/* Colors */ 
+.grey-text {
+  color: #9E9E9E;
+}
+
+/* Font  & Typography*/
+
+.text-display-2 {
+  font-size: 3rem!important;
+  line-height: 3.125rem;
+  letter-spacing: normal!important;
+}
+
+.text-display-1 {
+  font-size: 2rem !important;
+  line-height: 2.5rem;
+  letter-spacing: .0073529412em !important;
+}
+
+.text-display-1, .text-display-2 {
+  font-weight: 400;
+  font-family: Roboto,sans-serif !important;
+}
+
+.text-headline {
+  font-size: 1.5rem !important;
+  font-weight: 400;
+  letter-spacing: normal !important;
+  line-height: 2rem;
+
+}
+
+.text-title {
+  font-size: 1.25em !important;
+  font-weight: 500 !important;
+  letter-spacing: .0125em!important;
+  line-height: 2rem;
+}
+
+.text-subtitle {
+  font-size: 1rem !important;
+  letter-spacing: .009375em !important;
+  line-height: 1.75rem;
+}
+
+.text-caption {
+  font-size: .8rem!important;
+  letter-spacing: .0333333333em!important;
+  line-height: 1.25rem;
+}
+
+.text-mini-caption {
+  font-size: .6rem!important;
+  letter-spacing: .0333333333em!important;
+  line-height: 1.25rem;
+}
+
+.font-weight-thin {
+  font-weight: 300;
+} 
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 1200px) {
+  .app-main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
