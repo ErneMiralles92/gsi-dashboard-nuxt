@@ -1,9 +1,9 @@
 <template>
-  <div class="app-carousel">
+  <div class="app-carousel" :style="carouselStyle">
     <div class="app-carousel_prev">
       <slot name="prev">
         <AppButton icon text :disabled="disabledPrev" @click="prev">
-          <AppIcon large>mdi-chevron-left</AppIcon>
+          <AppIcon :color="iconColor" large>mdi-chevron-left</AppIcon>
         </AppButton>
       </slot>
     </div>
@@ -17,7 +17,7 @@
     <div class="app-carousel_next">
       <slot name="next">
         <AppButton icon text :disabled="disabledNext" @click="next">
-          <AppIcon large>mdi-chevron-right</AppIcon>
+          <AppIcon :color="iconColor" large>mdi-chevron-right</AppIcon>
         </AppButton>
       </slot>
     </div>
@@ -27,6 +27,7 @@
 <script>
 import AppIcon from '../AppIcon'
 import AppButton from '../AppButton.vue'
+import { convertToUnit } from '~/utils/helpers'
 
 const APPEAR_TRANSITIONS = {
   none: 'none',
@@ -39,6 +40,16 @@ export default {
     AppButton,
     AppIcon,
   },
+  props: {
+    height: {
+      type: [Number, String],
+      default: '100%',
+    },
+    iconColor: {
+      type: String,
+      default: 'black',
+    },
+  },
   data() {
     return {
       currentIndex: 0,
@@ -46,6 +57,11 @@ export default {
     }
   },
   computed: {
+    carouselStyle() {
+      return {
+        height: convertToUnit(this.height),
+      }
+    },
     appItemClass() {
       return {
         'app-carousel_item_disappear':
@@ -71,6 +87,14 @@ export default {
         : []
       return childrenItems
     },
+  },
+  watch: {
+    currentIndex(newValue) {
+      this.$emit('changed', newValue)
+    },
+  },
+  created() {
+    this.$emit('changed', this.currentIndex)
   },
   updated() {
     // this.checkDisabled()
@@ -99,7 +123,7 @@ export default {
       }, 100)
       setTimeout(() => {
         this.appearTrans = APPEAR_TRANSITIONS.none
-      }, 1000)
+      }, 2000)
     },
   },
 }
@@ -129,9 +153,9 @@ export default {
 .app-carousel_next {
   align-items: center;
   display: flex;
-  flex: 0 1 36px;
+  flex: 0 1 48px;
   justify-content: center;
-  min-width: 36px;
+  min-width: 48px;
 }
 
 .app-carousel_content {
@@ -160,7 +184,7 @@ export default {
 .app-carousel_item_disappear {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 1s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: visibility 0s, opacity 2s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 .app-carousel_item_is_appear {
   visibility: visible;
