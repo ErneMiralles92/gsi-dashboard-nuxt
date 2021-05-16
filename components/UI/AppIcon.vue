@@ -17,7 +17,7 @@ import { convertToUnit } from '~/utils/helpers'
 const SIZE_MAP = {
   small: '16px',
   default: '24px',
-  medium: '28px',
+  medium: '24px',
   large: '36px',
 }
 
