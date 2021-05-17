@@ -1,13 +1,14 @@
 <template>
   <AppCard class="app-row" width="100%" style="padding-left: 0">
-    <div class="app-column" style="flex: 1">
+    <div class="col-12">
       <div class="app-row" style="padding-left: 24px">
-        <h3 class="title">Cards</h3>
+        <h3 class="text-title">Cards</h3>
       </div>
-      <div class="app-row mt-3">
-        <div class="app-column col-left vertical-divider">
+      <div class="app-row mt-3 my-n6">
+        <div class="col-12 col-md-8 my-6 app-align-center">
           <AppCarousel
-            height="200px"
+            min-height="200px"
+            height="100%"
             :icon-color="$colors.blue"
             @changed="(index) => (currentCardIndex = index)"
           >
@@ -17,16 +18,27 @@
               hover
               height="100%"
               width="100%"
-              :color="card.color"
+              :color="accountTypes[card.accountType].color"
             >
               <div class="app-row fill-height">
                 <div
                   class="app-column app-justify-space-between"
                   style="color: white"
                 >
-                  <div class="app-row">Cloudcash Image</div>
-                  <div class="app-row text-headline">
-                    {{ card.number }}
+                  <div class="app-row">
+                    <div class="app-column app-align-start">
+                      <span class="font-weight-medium">cloudcash</span>
+                      <span
+                        class="text-mini-caption"
+                        style="text-transform: uppercase"
+                        >{{ accountTypes[card.accountType].text }}</span
+                      >
+                    </div>
+                  </div>
+                  <div class="app-row">
+                    <span class="text-headline" style="text-align: left">
+                      {{ card.number }}
+                    </span>
                   </div>
                   <div class="app-row mx-n3">
                     <div class="app-column px-3 app-align-start">
@@ -43,67 +55,53 @@
             </AppCard>
           </AppCarousel>
         </div>
-        <div class="app-column app-align-end col-right">
+        <hr class="vertical-divider my-6" style="margin-left: -1px" />
+        <div
+          class="
+            col-12 col-md-4
+            app-column app-align-center app-md-align-end
+            py-6
+          "
+          style="padding-left: 16px"
+        >
           <div
             class="app-row app-align-end text-display-1"
-            style="text-align: right"
             :style="{
               color: $colors.blue,
             }"
           >
-            <span
-              class="text-subtitle"
-              style="text-align: right; margin-right: 4px"
-              >$</span
-            >
+            <span class="text-subtitle" style="margin-right: 4px">$</span>
             {{ cardList[currentCardIndex].currentBalance }}
           </div>
-          <span
-            class="text-caption grey-text"
-            style="margin-bottom: 24px; text-align: right"
-          >
+          <span class="text-caption grey-text" style="margin-bottom: 24px">
             Current balance
           </span>
           <span
             class="app-row font-weight-medium app-align-end text-title"
-            style="text-align: right"
             :style="{
               color: $colors.green,
             }"
           >
-            <span
-              class="text-subtitle"
-              style="text-align: right; margin-right: 4px"
-              >$</span
-            >
+            <span class="text-subtitle" style="margin-right: 4px">$</span>
             {{ cardList[currentCardIndex].income }}
           </span>
-          <span
-            class="text-caption grey-text"
-            style="margin-bottom: 24px; text-align: right"
+          <span class="text-caption grey-text" style="margin-bottom: 24px"
             >Income</span
           >
           <span
             class="app-row app-align-end text-title"
-            style="text-align: right"
             :style="{
               color: $colors.red,
             }"
           >
-            <span
-              class="text-subtitle"
-              style="text-align: right; margin-right: 4px"
-              >$</span
-            >
+            <span class="text-subtitle" style="margin-right: 4px">$</span>
             {{ cardList[currentCardIndex].outcome }}
           </span>
-          <span class="text-caption grey-text" style="text-align: right"
-            >Outcome</span
-          >
+          <span class="text-caption grey-text">Outcome</span>
         </div>
       </div>
       <div class="app-row app-align-end mt-6">
-        <div class="app-column col-left" style="padding: 0 48px">
+        <div class="col-12 col-md-8" style="padding: 0 48px">
           <AppProgressBar
             :color="$colors.blue"
             rounded
@@ -123,7 +121,7 @@
             }}</span>
           </div>
         </div>
-        <div class="app-column col-right app-align-end" style="flex: 1">
+        <div class="app-column col-12 col-md-4 app-align-end">
           <AppSwitch
             v-model="cardList[currentCardIndex].deactivate"
             :color="$colors.blue"
@@ -145,45 +143,29 @@
 export default {
   name: 'Cards',
   props: {
-    // cards: {
-    //   type: Array,
-    //   default: [
-    //     {
-    //     }
-    //   ]
-    // }
+    value: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
       currentCardIndex: 0,
-      cardList: [
-        {
+      accountTypes: {
+        premium: {
           color: this.$colors.blue,
-          providerImage: '',
-          number: '5789 **** **** 8907',
-          holder: 'John Smith',
-          expDate: '12/26',
-          currentBalance: 1650.78,
-          outcome: 1650,
-          income: 200,
-          paymentLimit: 4000,
-          canDeactivate: false,
-          deactivate: false,
+          text: 'Premium Account',
         },
-        {
-          color: this.$colors.red,
-          providerImage: '',
-          number: '4111 **** **** 2345',
-          holder: 'Julia Robson',
-          expDate: '13/28',
-          currentBalance: 3019.8,
-          outcome: 4590,
-          income: 500,
-          paymentLimit: 6000,
-          canDeactivate: false,
-          deactivate: false,
+        regular: {
+          color: this.$colors.green,
+          text: 'Regular Account',
         },
-      ],
+
+        star: {
+          color: '#424242',
+          text: 'Star Account',
+        },
+      },
     }
   },
   computed: {
@@ -192,6 +174,14 @@ export default {
         (+this.cardList[this.currentCardIndex].outcome * 100) /
         +this.cardList[this.currentCardIndex].paymentLimit
       return percent.toFixed(2)
+    },
+    cardList: {
+      get() {
+        return this.value
+      },
+      set(cards) {
+        this.$emit('input', cards)
+      },
     },
   },
 }
@@ -208,12 +198,21 @@ export default {
 }
 
 .vertical-divider {
-  border-right: 1px solid #e0e0e0;
+  align-self: stretch;
+  border: solid #e0e0e0;
+  border-width: 0 thin 0 0;
+  display: inline-flex;
+  height: inherit;
+  min-height: 100%;
+  max-height: 100%;
+  max-width: 0;
+  width: 0;
+  vertical-align: text-bottom;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1024px) {
   .vertical-divider {
-    border-right: none;
+    display: none;
   }
 }
 </style>

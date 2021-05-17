@@ -1,0 +1,90 @@
+export default {
+  cards: [
+    {
+      accountType: 'premium',
+      number: '5789 **** **** 8907',
+      holder: 'John Smith',
+      expDate: '12/26',
+      currentBalance: 1650.78,
+      outcome: 1650,
+      income: 200,
+      paymentLimit: 4000,
+      canDeactivate: false,
+      deactivate: false,
+    },
+    {
+      accountType: 'regular',
+      number: '4111 **** **** 2345',
+      holder: 'Julia Robson',
+      expDate: '11/28',
+      currentBalance: 3019.8,
+      outcome: 4590,
+      income: 500,
+      paymentLimit: 6000,
+      canDeactivate: false,
+      deactivate: false,
+    },
+    {
+      accountType: 'star',
+      number: '5234 **** **** 4356',
+      holder: 'Juan Gómez',
+      expDate: '5/22',
+      currentBalance: 4025.55,
+      outcome: 6590,
+      income: 800,
+      paymentLimit: 7500,
+      canDeactivate: false,
+      deactivate: false,
+    },
+  ],
+  goals: [
+    {
+      amount: 550,
+      date: '12/20/20',
+      icon: {
+        name: 'mdi-image-filter-hdr',
+        color: '#1976D2',
+      },
+      name: 'Holidays',
+    },
+    {
+      amount: 200,
+      date: '6/1/21',
+      icon: {
+        name: 'mdi-cellphone',
+        color: '#FF9800',
+      },
+      name: 'Cellphone',
+    },
+    {
+      amount: 820,
+      date: '2/5/21',
+      icon: {
+        name: 'mdi-google-controller',
+        color: '#4CAF50',
+      },
+      name: 'Xbox',
+    },
+    {
+      amount: 630,
+      date: '5/8/21',
+      icon: {
+        name: 'mdi-laptop',
+        color: '#424242',
+      },
+      name: 'Laptop',
+    },
+    // {
+    //   amount:,
+    //   date:,
+    //   icon:,
+    //   name:,
+    // },
+    // {
+    //   amount:,
+    //   date:,
+    //   icon:,
+    //   name:,
+    // },
+  ],
+}

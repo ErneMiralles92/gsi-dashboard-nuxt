@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'gsi-dashboard-nuxt',
+    title: 'Cloudcash',
     htmlAttrs: {
       lang: 'en',
     },
