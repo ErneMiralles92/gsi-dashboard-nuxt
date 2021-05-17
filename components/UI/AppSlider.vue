@@ -1,9 +1,9 @@
 <template>
   <div class="app-slider">
-    <div class="app-slider_prev">
+    <div v-show="!disabledPrev" class="app-slider_prev">
       <slot name="prev">
-        <AppButton icon text :disabled="disabledPrev" @click="prev">
-          <AppIcon large>mdi-chevron-left</AppIcon>
+        <AppButton height="32" icon text :disabled="disabledPrev" @click="prev">
+          <AppIcon :color="iconColor" large>mdi-chevron-left</AppIcon>
         </AppButton>
       </slot>
     </div>
@@ -16,10 +16,10 @@
         <slot name="default"></slot>
       </div>
     </div>
-    <div class="app-slider_next">
+    <div v-show="!disabledNext" class="app-slider_next">
       <slot name="next">
-        <AppButton icon text :disabled="disabledNext" @click="next">
-          <AppIcon large>mdi-chevron-right</AppIcon>
+        <AppButton height="32" icon text :disabled="disabledNext" @click="next">
+          <AppIcon :color="iconColor" large>mdi-chevron-right</AppIcon>
         </AppButton>
       </slot>
     </div>
@@ -41,6 +41,12 @@ export default {
     AppButton,
     AppIcon,
   },
+  props: {
+    iconColor: {
+      type: String,
+      default: 'black',
+    },
+  },
   data() {
     return {
       contentTranslateValue: 0,
@@ -48,7 +54,7 @@ export default {
       disabledNext: false,
     }
   },
-  updated() {
+  mounted() {
     this.checkDisabled()
   },
   methods: {
