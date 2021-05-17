@@ -8,18 +8,21 @@
     </div>
     <div class="actions app-column app-justify-end">
       <div class="app-row app-align-center">
-        <AppButton style="margin: 4px" icon text rounded>
+        <AppButton large style="margin: 4px" icon text rounded>
           <AppIcon color="#BDBDBD">mdi-email</AppIcon>
         </AppButton>
-        <AppButton style="margin: 4px" icon text rounded>
+        <AppButton large style="margin: 4px" icon text rounded>
           <AppIcon color="#BDBDBD">mdi-bell</AppIcon>
         </AppButton>
-        <AppButton style="margin: 4px" icon text rounded>
-          <AppIcon large color="#BDBDBD">mdi-account-circle</AppIcon>
+        <AppButton large style="margin: 4px" icon text rounded>
+          <AppIcon large :color="$colors.blue">mdi-account-circle</AppIcon>
         </AppButton>
-        <div class="app-column app-align-start" style="margin: 4px 0 4px 4px">
-          <span>Andrew</span>
-          <span>Admin account</span>
+        <div
+          class="app-column app-align-start text-caption"
+          style="margin: 4px 0 4px 4px"
+        >
+          <span class="font-weight-medium">Andrew</span>
+          <span class="grey-text">Admin account</span>
         </div>
       </div>
     </div>
