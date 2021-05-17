@@ -44,7 +44,7 @@ export default {
     // },
     minWidth: {
       type: [Number, String],
-      default: '64px',
+      default: '24px',
     },
     width: {
       type: [Number, String],
@@ -78,7 +78,7 @@ export default {
 .app-card {
   display: block;
   max-width: 100%;
-  min-height: 64px;
+  min-height: 24px;
   outline: none;
   position: relative;
   white-space: normal;

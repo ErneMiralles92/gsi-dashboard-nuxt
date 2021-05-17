@@ -87,4 +87,9 @@ export default {
     //   name:,
     // },
   ],
+  outcomes: {
+    shopping: 52,
+    electronics: 21,
+    travels: 74,
+  },
 }

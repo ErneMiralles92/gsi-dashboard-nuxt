@@ -162,7 +162,7 @@ export default {
         },
 
         star: {
-          color: '#424242',
+          color: this.$colors.red,
           text: 'Star Account',
         },
       },

@@ -52,6 +52,10 @@ body {
   justify-content: space-between !important;
 }
 
+.app-justify-stretch {
+  justify-items: stretch;
+}
+
 .app-align-start {
   align-items: flex-start !important;
 }
@@ -117,6 +121,16 @@ body {
   margin-left: 8px;
   margin-right: 8px;
 }
+.mx-3 {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.mr-3 {
+  margin-right: 12px;
+}
+.ml-3 {
+  margin-left: 12px;
+}
 
 .mx-n3 {
   margin-left: -12px;
@@ -131,6 +145,9 @@ body {
 .px-3 {
   padding-left: 12px;
   padding-right: 12px;
+}
+.pa-2 {
+  padding: 8px!important;
 }
 
 .my-3 {
@@ -165,6 +182,13 @@ body {
 }
 .app-spacer {
   flex-grow: 1!important;
+}
+
+.app-text-left {
+  text-align: left !important;
+}
+.app-text-right {
+  text-align: right !important;
 }
 
 /* Colors */ 
@@ -273,6 +297,9 @@ body {
   .app-md-align-end {
     align-items: flex-end !important;
   }
+  .app-md-text-left {
+    text-align: left !important;
+  }
   .app-md-text-right {
     text-align: right !important;
   }
@@ -298,6 +325,10 @@ body {
   }
   .app-sm-align-end {
     align-items: flex-end!important;
+  }
+
+  .app-sm-text-left {
+    text-align: left !important;
   }
   .app-sm-text-right {
     text-align: right !important;

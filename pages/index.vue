@@ -8,6 +8,9 @@
       <div class="app-row">
         <Goals :goals="fakeData.goals" />
       </div>
+      <div class="app-row mt-6">
+        <OutcomeStatistics class="col-12" :outcomes="fakeData.outcomes" />
+      </div>
       <AppCard class="mt-6" height="10rem" width="100%"> </AppCard>
       <AppCard class="mt-6" height="10rem" width="100%"> </AppCard>
     </div>
