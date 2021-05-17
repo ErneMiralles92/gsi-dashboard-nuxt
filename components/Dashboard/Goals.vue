@@ -6,7 +6,7 @@
         <AppIcon>mdi-plus</AppIcon>
       </AppButton>
     </div>
-    <div class="app-row app-align-center">
+    <div class="app-row app-align-center mx-n2">
       <AppSlider width="400px" :icon-color="$colors.blue">
         <div class="app-row mx-n2 px-2">
           <AppCard
