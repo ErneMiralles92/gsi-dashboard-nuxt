@@ -29,20 +29,26 @@ export default {
       type: String,
       default: 'black',
     },
+    backgroundColor: {
+      type: String,
+      default: 'transparent',
+    },
     size: {
       type: [Number, String],
       default: SIZE_MAP.default,
     },
     small: { type: Boolean, default: false },
+    medium: { type: Boolean, default: false },
     large: { type: Boolean, default: false },
   },
   computed: {
-    medium() {
-      return !this.small && !this.large
-    },
+    // medium() {
+    //   return !this.small && !this.large
+    // },
     customStyle() {
       let styles = {
         color: this.color,
+        'background-color': this.backgroundColor,
       }
       const size = this.resultingSize
       if (size) {
