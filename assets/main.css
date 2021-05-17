@@ -33,6 +33,7 @@ body {
 
 .app-row {
   display: flex !important;
+  flex-wrap: wrap;
 }
 
 .app-justify-start {
@@ -70,7 +71,34 @@ body {
   align-items: space-between !important;
 }
 
+.col-4 {
+  flex: 0 0 33.3333333333% !important;
+  max-width: 33.3333333333% !important;
+}
+.col-6 {
+  flex: 0 0 50% !important;
+  max-width: 50% !important;
+}
+
+.col-8 {
+  flex: 0 0 66.6666666667% !important;
+  max-width: 66.6666666667% !important;
+}
+
+.col-12 {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
+}
 /* Spacing */
+
+
+.mt-1 {
+  margin-top: 4px;
+}
+
+.mt-2 {
+  margin-top: 4px;
+}
 
 .mt-3 {
   margin-top: 12px;
@@ -80,9 +108,24 @@ body {
   margin-top: 24px;
 }
 
+.mx-n2 {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .mx-n3 {
   margin-left: -12px;
   margin-right: -12px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .px-3 {
@@ -90,9 +133,18 @@ body {
   padding-right: 12px;
 }
 
+.my-3 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+} 
 .my-n6 {
   margin-top: -24px;
   margin-bottom: -24px;
+}
+
+.my-6 {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .py-6 {
@@ -100,8 +152,19 @@ body {
   padding-bottom: 24px;
 }
 
+.pt-4 {
+  padding-top: 16px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
 .fill-height {
   height: 100%;
+}
+.app-spacer {
+  flex-grow: 1!important;
 }
 
 /* Colors */ 
@@ -186,3 +249,61 @@ body {
     margin: 0 auto;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .col-md-4 {
+    flex: 0 0 33.3333333333% !important;
+    max-width: 33.3333333333% !important;
+  }
+  
+  .col-md-8 {
+    flex: 0 0 66.6666666667% !important;
+    max-width: 66.6666666667% !important;
+  }
+  
+  .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .col-md-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .app-md-align-end {
+    align-items: flex-end !important;
+  }
+  .app-md-text-right {
+    text-align: right !important;
+  }
+}
+@media screen and (min-width: 800px) {
+  .col-sm-4 {
+    flex: 0 0 33.3333333333% !important;;
+    max-width: 33.3333333333% !important;;
+  }
+  .col-sm-8 {
+    flex: 0 0 66.6666666667% !important;;
+    max-width: 66.6666666667% !important;;
+  }
+  
+  .col-sm-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  .col-sm-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .app-sm-align-end {
+    align-items: flex-end!important;
+  }
+  .app-sm-text-right {
+    text-align: right !important;
+  }
+}
+
+/* @media screen and (min-width: 375px) {
+ 
+} */
