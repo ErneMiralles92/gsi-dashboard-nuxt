@@ -14,10 +14,25 @@
 </template>
 
 <script>
+import { convertToUnit } from '~/utils/helpers'
+
+const SIZE_MAP = {
+  small: '16px',
+  default: '24px',
+  medium: '24px',
+  large: '36px',
+}
+
 export default {
   name: 'AppButton',
   inheritAttrs: false,
   props: {
+    height: {
+      type: [Number, String],
+      default: SIZE_MAP.default,
+    },
+    small: { type: Boolean, default: false },
+    large: { type: Boolean, default: false },
     text: {
       type: Boolean,
       default: false,
@@ -48,6 +63,18 @@ export default {
     },
   },
   computed: {
+    resultingHeight() {
+      const sizes = {
+        small: this.small,
+        medium: this.medium,
+        large: this.large,
+      }
+      const explicitHeight = Object.keys(sizes).find((key) => sizes[key])
+      return (
+        (explicitHeight && SIZE_MAP[explicitHeight]) ||
+        convertToUnit(this.height)
+      )
+    },
     regular() {
       return !this.text && !this.rounded && !this.icon && !this.depressed
     },
@@ -65,12 +92,25 @@ export default {
       return btnClasses
     },
     customStyle() {
-      const styles = {
+      let styles = {
         color: this.textColor,
         backgroundColor: this.color,
         borderColor: this.color,
       }
-
+      const size = this.resultingHeight
+      if (size) {
+        styles = {
+          ...styles,
+          fontSize: size,
+          height: size,
+        }
+        if (this.icon) {
+          styles.width = size
+        }
+        if (this.rounded) {
+          styles['border-radius'] = size
+        }
+      }
       return styles
     },
   },
@@ -100,7 +140,6 @@ export default {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-  height: 36px;
   padding: 0 16px;
 }
 
@@ -112,6 +151,9 @@ export default {
   position: relative;
 }
 
+.app-btn-icon .app-btn__content {
+  justify-content: center;
+}
 .app-btn.app-btn-regular {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
@@ -126,9 +168,9 @@ export default {
   box-shadow: none !important;
 }
 
-.app-btn.app-btn-rounded {
+/* .app-btn.app-btn-rounded {
   border-radius: 28px;
-}
+} */
 
 .app-btn-flat,
 .app-btn-text {
@@ -144,12 +186,13 @@ export default {
 }
 .app-btn-round {
   border-radius: 50%;
+  padding: 0;
 }
 
-.app-btn-icon {
+/* .app-btn-icon {
   height: 36px;
   width: 36px;
-}
+} */
 
 .app-btn-icon:hover {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
