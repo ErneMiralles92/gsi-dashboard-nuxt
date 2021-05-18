@@ -18,7 +18,7 @@ import { convertToUnit } from '~/utils/helpers'
 
 const SIZE_MAP = {
   small: '16px',
-  default: '24px',
+  default: 'fit-content',
   medium: '24px',
   large: '36px',
 }
@@ -61,6 +61,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    borderRadius: {
+      type: [Number, String],
+      default: 24,
+    },
   },
   computed: {
     resultingHeight() {
@@ -96,6 +100,7 @@ export default {
         color: this.textColor,
         backgroundColor: this.color,
         borderColor: this.color,
+        'border-radius': convertToUnit(this.borderRadius),
       }
       const size = this.resultingHeight
       if (size) {
@@ -130,7 +135,6 @@ export default {
   border-style: none;
   position: relative;
   text-decoration: none;
-  text-transform: uppercase;
   transition-duration: 0.28s;
   transition-property: box-shadow, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
