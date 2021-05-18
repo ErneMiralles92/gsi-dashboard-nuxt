@@ -11,9 +11,9 @@
       <div class="app-row mt-6">
         <OutcomeStatistics class="col-12" :outcomes="fakeData.outcomes" />
       </div>
-      <!-- <div class="app-row mt-6">
-        <AddTransaction class="col-12" />
-      </div> -->
+      <div class="app-row mt-6">
+        <AddTransaction class="col-12" :users="fakeData.users" />
+      </div>
     </div>
   </div>
 </template>

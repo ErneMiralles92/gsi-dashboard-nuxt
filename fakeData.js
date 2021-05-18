@@ -1,4 +1,38 @@
 export default {
+  users: [
+    {
+      name: 'Ann',
+      username: 'ann',
+      image: 'https://randomuser.me/api/portraits/thumb/women/6.jpg',
+    },
+    {
+      name: 'Monica',
+      username: 'monica',
+      image: 'https://randomuser.me/api/portraits/thumb/women/9.jpg',
+    },
+    {
+      name: 'John',
+      username: 'john',
+      image: 'https://randomuser.me/api/portraits/thumb/men/4.jpg',
+    },
+    {
+      name: 'Mike',
+      username: 'mike',
+      image: 'https://randomuser.me/api/portraits/thumb/men/6.jpg',
+    },
+    {
+      name: 'Mia',
+      username: 'mia',
+    },
+    // {
+    //   name: 'Mia',
+    //   username: 'mi2',
+    // },
+    // {
+    //   name: 'Mia',
+    //   username: 'mia3',
+    // },
+  ],
   cards: [
     {
       accountType: 'premium',
