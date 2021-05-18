@@ -18,6 +18,7 @@
               hover
               height="100%"
               width="100%"
+              class="creditCard"
               :color="accountTypes[card.accountType].color"
             >
               <div class="app-row fill-height">
@@ -27,7 +28,7 @@
                 >
                   <div class="app-row">
                     <div class="app-column app-align-start">
-                      <span class="font-weight-medium">cloudcash</span>
+                      <span class="font-weight-bold">cloudcash</span>
                       <span
                         class="text-mini-caption"
                         style="text-transform: uppercase"
@@ -77,7 +78,7 @@
             Current balance
           </span>
           <span
-            class="app-row font-weight-medium app-align-end text-title"
+            class="app-row font-weight-bold app-align-end text-title"
             :style="{
               color: $colors.green,
             }"
@@ -116,7 +117,7 @@
             style="margin-top: 8px"
           >
             <span class="grey-text">Weekly payment limit</span>
-            <span class="font-weight-medium">{{
+            <span class="font-weight-bold">{{
               `$${currencyFormat(
                 cardList[currentCardIndex].outcome
               )} / $ ${currencyFormat(cardList[currentCardIndex].paymentLimit)}`
@@ -195,15 +196,6 @@ export default {
 </script>
 
 <style scoped>
-.col-left {
-  flex: 0 0 66.6666666667%;
-  max-width: 66.6666666667%;
-}
-.col-right {
-  flex: 0 0 33.3333333333%;
-  max-width: 33.3333333333%;
-}
-
 .vertical-divider {
   align-self: stretch;
   border: solid #e0e0e0;
@@ -215,6 +207,10 @@ export default {
   max-width: 0;
   width: 0;
   vertical-align: text-bottom;
+}
+
+.creditCard {
+  background-image: url('~/assets/cloud.png');
 }
 
 @media screen and (max-width: 1024px) {

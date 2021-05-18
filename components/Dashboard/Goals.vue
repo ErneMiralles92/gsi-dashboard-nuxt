@@ -1,5 +1,5 @@
 <template>
-  <div class="app-column">
+  <div class="app-column pl-6">
     <div class="app-row app-align-center pt-4">
       <h3 class="text-title">Goals</h3>
       <AppButton icon style="margin-left: 8px" :color="$colors.orange">
@@ -35,104 +35,6 @@
         </div>
       </AppSlider>
     </div>
-    <!-- <div class="app-row mt-3">
-      <div class="app-column col-left vertical-divider">
-        <AppCarousel
-          height="200px"
-          :icon-color="$colors.blue"
-          @changed="(index) => (currentCardIndex = index)"
-        >
-          <AppCard
-            v-for="(card, index) in cardList"
-            :key="index"
-            hover
-            height="100%"
-            width="100%"
-            :color="card.color"
-          >
-            <div class="app-row fill-height">
-              <div
-                class="app-column app-justify-space-between"
-                style="color: white"
-              >
-                <div class="app-row">Cloudcash Image</div>
-                <div class="app-row text-headline">
-                  {{ card.number }}
-                </div>
-                <div class="app-row mx-n3">
-                  <div class="app-column px-3 app-align-start">
-                    <span class="text-mini-caption">Card Holder</span>
-                    <span class="text-caption">{{ card.holder }}</span>
-                  </div>
-                  <div class="app-column px-3 app-align-start">
-                    <span class="text-mini-caption">Expire</span>
-                    <span class="text-caption">{{ card.expDate }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AppCard>
-        </AppCarousel>
-      </div>
-      <div class="app-column app-align-end col-right">
-        <div
-          class="app-row app-align-end text-display-1"
-          style="text-align: right"
-          :style="{
-            color: $colors.blue,
-          }"
-        >
-          <span
-            class="text-subtitle"
-            style="text-align: right; margin-right: 4px"
-            >$</span
-          >
-          {{ cardList[currentCardIndex].currentBalance }}
-        </div>
-        <span
-          class="text-caption grey-text"
-          style="margin-bottom: 24px; text-align: right"
-        >
-          Current balance
-        </span>
-        <span
-          class="app-row font-weight-medium app-align-end text-title"
-          style="text-align: right"
-          :style="{
-            color: $colors.green,
-          }"
-        >
-          <span
-            class="text-subtitle"
-            style="text-align: right; margin-right: 4px"
-            >$</span
-          >
-          {{ cardList[currentCardIndex].income }}
-        </span>
-        <span
-          class="text-caption grey-text"
-          style="margin-bottom: 24px; text-align: right"
-          >Income</span
-        >
-        <span
-          class="app-row app-align-end text-title"
-          style="text-align: right"
-          :style="{
-            color: $colors.red,
-          }"
-        >
-          <span
-            class="text-subtitle"
-            style="text-align: right; margin-right: 4px"
-            >$</span
-          >
-          {{ cardList[currentCardIndex].outcome }}
-        </span>
-        <span class="text-caption grey-text" style="text-align: right"
-          >Outcome</span
-        >
-      </div>
-    </div> -->
   </div>
 </template>
 

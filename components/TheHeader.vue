@@ -1,6 +1,6 @@
 <template>
-  <div class="app-header app-row app-align-center app-justify-space-between">
-    <div class="title-block app-column app-align-start">
+  <div class="app-header app-row app-align-center app-sm-justify-space-between">
+    <div class="title-block app-column app-align-center app-sm-align-start">
       <h1>Weekly sumup</h1>
       <h6 class="text-caption grey-text">
         Get summary of your weekly online transactions here.
@@ -21,7 +21,7 @@
           class="app-column app-align-start text-caption"
           style="margin: 4px 0 4px 4px"
         >
-          <span class="font-weight-medium">Andrew</span>
+          <span class="font-weight-bold">Andrew</span>
           <span class="grey-text">Admin account</span>
         </div>
       </div>

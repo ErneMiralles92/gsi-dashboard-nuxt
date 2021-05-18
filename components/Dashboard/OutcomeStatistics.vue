@@ -1,5 +1,5 @@
 <template>
-  <div class="app-column">
+  <div class="app-column pl-6">
     <div class="app-row">
       <h3 class="text-title">Outcome Statistics</h3>
     </div>
@@ -52,7 +52,7 @@ export default {
           icon: 'mdi-cart',
           color: {
             base: this.$colors.orange,
-            light: this.$colors.orangeLight,
+            light: this.$colors.orangeLighten,
           },
           text: 'Shopping',
         },
@@ -60,7 +60,7 @@ export default {
           icon: ' mdi-truck',
           color: {
             base: this.$colors.green,
-            light: this.$colors.greenLight,
+            light: this.$colors.greenLighten,
           },
           text: 'Electronics',
         },
@@ -68,7 +68,7 @@ export default {
           icon: 'mdi-airplane',
           color: {
             base: this.$colors.blue,
-            light: this.$colors.blueLight,
+            light: this.$colors.blueLighten,
           },
           text: 'Travels',
         },

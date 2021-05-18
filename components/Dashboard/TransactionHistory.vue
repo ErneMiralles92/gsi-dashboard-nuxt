@@ -85,6 +85,7 @@ export default {
         {
           value: 'amount',
           text: 'Amount',
+          class: 'font-weight-bold',
         },
       ]
     },
