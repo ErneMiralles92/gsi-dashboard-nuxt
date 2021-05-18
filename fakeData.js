@@ -37,6 +37,43 @@ export default {
       deactivate: false,
     },
   ],
+  transactions: [
+    {
+      id: '1',
+      receiver: 'Tesco Market',
+      type: 'shopping',
+      date: '12/13/20',
+      amount: 75.67,
+    },
+    {
+      id: '2',
+      receiver: 'ElectroMen Market',
+      type: 'shopping',
+      date: '12/14/20',
+      amount: 250,
+    },
+    {
+      id: '3',
+      receiver: 'Fiorgio Restaurant',
+      type: 'food',
+      date: '12/7/20',
+      amount: 19.5,
+    },
+    {
+      id: '4',
+      receiver: 'John Mathew Kayne',
+      type: 'sport',
+      date: '12/6/20',
+      amount: 350,
+    },
+    {
+      id: '5',
+      receiver: 'Ann Marlin',
+      type: 'shopping',
+      date: '11/31/20',
+      amount: 430,
+    },
+  ],
   goals: [
     {
       amount: 550,
@@ -74,18 +111,6 @@ export default {
       },
       name: 'Laptop',
     },
-    // {
-    //   amount:,
-    //   date:,
-    //   icon:,
-    //   name:,
-    // },
-    // {
-    //   amount:,
-    //   date:,
-    //   icon:,
-    //   name:,
-    // },
   ],
   outcomes: {
     shopping: 52,

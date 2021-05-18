@@ -1,10 +1,10 @@
 <template>
   <AppCard class="app-row" width="100%" style="padding-left: 0">
     <div class="col-12">
-      <div class="app-row" style="padding-left: 24px">
+      <div class="app-row mb-3" style="padding-left: 24px">
         <h3 class="text-title">Cards</h3>
       </div>
-      <div class="app-row mt-3 my-n6">
+      <div class="app-row my-n6">
         <div class="col-12 col-md-8 my-6 app-align-center">
           <AppCarousel
             min-height="200px"
@@ -71,7 +71,7 @@
             }"
           >
             <span class="text-subtitle" style="margin-right: 4px">$</span>
-            {{ cardList[currentCardIndex].currentBalance }}
+            {{ currencyFormat(cardList[currentCardIndex].currentBalance) }}
           </div>
           <span class="text-caption grey-text" style="margin-bottom: 24px">
             Current balance
@@ -83,7 +83,7 @@
             }"
           >
             <span class="text-subtitle" style="margin-right: 4px">$</span>
-            {{ cardList[currentCardIndex].income }}
+            {{ currencyFormat(cardList[currentCardIndex].income) }}
           </span>
           <span class="text-caption grey-text" style="margin-bottom: 24px"
             >Income</span
@@ -95,7 +95,7 @@
             }"
           >
             <span class="text-subtitle" style="margin-right: 4px">$</span>
-            {{ cardList[currentCardIndex].outcome }}
+            {{ currencyFormat(cardList[currentCardIndex].outcome) }}
           </span>
           <span class="text-caption grey-text">Outcome</span>
         </div>
@@ -117,7 +117,9 @@
           >
             <span class="grey-text">Weekly payment limit</span>
             <span class="font-weight-medium">{{
-              `$${cardList[currentCardIndex].outcome} / $ ${cardList[currentCardIndex].paymentLimit}`
+              `$${currencyFormat(
+                cardList[currentCardIndex].outcome
+              )} / $ ${currencyFormat(cardList[currentCardIndex].paymentLimit)}`
             }}</span>
           </div>
         </div>
@@ -182,6 +184,11 @@ export default {
       set(cards) {
         this.$emit('input', cards)
       },
+    },
+  },
+  methods: {
+    currencyFormat(value) {
+      return parseFloat(value).toFixed(2)
     },
   },
 }
