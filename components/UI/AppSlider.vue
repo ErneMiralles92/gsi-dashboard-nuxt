@@ -52,10 +52,18 @@ export default {
       contentTranslateValue: 0,
       disabledPrev: false,
       disabledNext: false,
+      resizeListener: null,
     }
   },
+
   mounted() {
+    this.resizeListener = window.addEventListener('resize', () =>
+      this.checkDisabled()
+    )
     this.checkDisabled()
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resizeListener)
   },
   methods: {
     prev() {
