@@ -38,11 +38,11 @@ export default {
       type: [Number, String],
       default: '100%',
     },
-    // minHeight: {
-    //   type: [Number, String],
-    //   default: false,
-    // },
     minWidth: {
+      type: [Number, String],
+      default: '24px',
+    },
+    minHeight: {
       type: [Number, String],
       default: '24px',
     },
@@ -63,6 +63,7 @@ export default {
         height: convertToUnit(this.height),
         width: convertToUnit(this.width),
         'min-width': convertToUnit(this.minWidth),
+        'min-height': convertToUnit(this.minHeight),
         'max-width': convertToUnit(this.maxWidth),
         'border-radius': convertToUnit(this.borderRadius),
         'background-color': this.color,
@@ -78,7 +79,6 @@ export default {
 .app-card {
   display: block;
   max-width: 100%;
-  min-height: 24px;
   outline: none;
   position: relative;
   white-space: normal;
