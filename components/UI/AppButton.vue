@@ -8,7 +8,10 @@
     v-on="$listeners"
   >
     <div class="app-btn__content">
-      <slot name="default"> </slot>
+      <Nuxt-Link v-if="to" :to="to">
+        <slot name="default"> </slot>
+      </Nuxt-Link>
+      <slot v-else name="default"> </slot>
     </div>
   </button>
 </template>
@@ -65,8 +68,16 @@ export default {
       type: [Number, String],
       default: 24,
     },
+    to: {
+      type: String,
+      default: '',
+    },
   },
   computed: {
+    isLinkExactActive() {
+      const to = this.to.endsWith('/') ? this.to : this.to + '/'
+      return !!this.to && this.$route.path === to
+    },
     resultingHeight() {
       const sizes = {
         small: this.small,
@@ -92,6 +103,8 @@ export default {
         'app-btn-rounded': this.rounded,
         'app-btn-depressed': this.depressed,
         'app-btn-disabled': this.disabled,
+        'app-btn-link': this.to,
+        'app-btn-link-exact-active': this.isLinkExactActive,
       }
       return btnClasses
     },
@@ -179,6 +192,7 @@ export default {
 .app-btn-flat,
 .app-btn-text {
   background-color: transparent !important;
+  border-radius: 4px;
 }
 
 .app-btn-text:hover {
@@ -203,6 +217,10 @@ export default {
     0 1px 5px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
+.app-btn-link-exact-active {
+  background-color: #e3f2fd !important;
+}
+
 .app-btn.app-btn-disabled:not(.app-btn-flat):not(.app-btn-text) {
   background-color: rgba(0, 0, 0, 0.12) !important;
 }
@@ -220,5 +238,11 @@ export default {
 
 .app-btn:active {
   opacity: 0.6;
+}
+
+.app-btn-link {
+}
+.app-btn-link a {
+  text-decoration: none;
 }
 </style>
