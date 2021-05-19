@@ -6,7 +6,7 @@
           <div class="app-row mb-2">
             <h3 class="text-title">New Transaction</h3>
           </div>
-          <div class="app-row app-justify-space-between ma-n1 app-align-end">
+          <div class="app-row ma-n1 app-align-end">
             <AppSlider :icon-color="$colors.blue">
               <div class="app-row mx-n2 px-2">
                 <div
@@ -31,8 +31,7 @@
                 </div>
               </div>
             </AppSlider>
-
-            <div class="app-column ma-1 app-align-center">
+            <div class="app-column ma-2 app-align-center">
               <AppButton icon :color="$colors.orange" class="mb-1">
                 <AppIcon>mdi-plus</AppIcon>
               </AppButton>
