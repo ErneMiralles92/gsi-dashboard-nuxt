@@ -1,12 +1,30 @@
 <template>
-  <div class="app-header app-row app-align-center app-sm-justify-space-between">
-    <div class="title-block app-column app-align-center app-sm-align-start">
+  <div class="app-header app-row app-align-center">
+    <AppButton
+      class="hide-for-desktop mr-2"
+      large
+      icon
+      text
+      rounded
+      @click="drawer = !drawer"
+    >
+      <AppIcon color="#BDBDBD">mdi-menu</AppIcon>
+    </AppButton>
+    <div class="title-block app-column app-align-start">
       <h1>Weekly sumup</h1>
-      <h6 class="text-caption grey-text">
+      <h6 class="text-caption grey-text app-text-left">
         Get summary of your weekly online transactions here.
       </h6>
     </div>
-    <div class="actions app-column app-justify-end">
+    <div class="app-spacer"></div>
+    <div
+      class="
+        actions
+        app-column
+        col-12 col-sm-6
+        app-align-start app-sm-align-end
+      "
+    >
       <div class="app-row app-align-center">
         <AppButton large style="margin: 4px" icon text rounded>
           <AppIcon color="#BDBDBD">mdi-email</AppIcon>
@@ -30,7 +48,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    drawer: {
+      get() {
+        return this.$store.getters.drawer
+      },
+      set(value) {
+        this.$store.commit('setDrawer', value)
+      },
+    },
+  },
+}
 </script>
 
 <style scoped>

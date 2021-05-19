@@ -17,12 +17,20 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
-  text-align: center;
-  padding: 24px;
+  text-align: center;  
+  flex: 1 0 auto;
+  max-width: 100%;
+  transition: .2s cubic-bezier(.4,0,.2,1);
+  padding: 16px;
+  background-color: white;
 }
 
 .app-main {
-  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex: 1 0 auto;
+  max-width: 100%;
+  display: flex;
 }
 
 .app-column {
@@ -116,6 +124,9 @@ body {
 .mt-6 {
   margin-top: 24px;
 }
+.mt-9 {
+  margin-top: 36px;
+}
 
 .mx-n2 {
   margin-left: -8px;
@@ -162,6 +173,9 @@ body {
 }
 .mb-3 {
   margin-bottom: 12px;
+}
+.mb-9 {
+  margin-bottom: 36px;
 }
 
 .px-2 {
@@ -277,6 +291,9 @@ body {
 .app-text-right {
   text-align: right !important;
 }
+.app-text-center {
+  text-align: center !important;
+}
 
 /* Colors */ 
 .grey-text {
@@ -351,14 +368,17 @@ body {
   font-weight: 600 !important;
 }
 
-
+/* Nuxt */
+.nuxt-link-exact-active {
+  color: #1976D2;
+}
 /* Media Queries */
 
 @media screen and (min-width: 1200px) {
-  .app-main {
+  /* .app-main {
     max-width: 1200px;
     margin: 0 auto;
-  }
+  } */
 }
 
 @media screen and (min-width: 1024px) {
@@ -399,8 +419,17 @@ body {
   .app-md-text-right {
     text-align: right !important;
   }
+  .app-md-text-center {
+    text-align: center !important;
+  }
 }
 @media screen and (min-width: 800px) {
+  .app-container {
+    padding: 24px 24px 4px 224px;
+  }
+  .hide-for-desktop {
+    display: none !important;
+  }
   .col-sm-4 {
     flex: 0 0 33.3333333333% !important;;
     max-width: 33.3333333333% !important;;
@@ -437,6 +466,9 @@ body {
   }
   .app-sm-text-right {
     text-align: right !important;
+  }
+  .app-sm-text-center {
+    text-align: center !important;
   }
 
   .app-sm-justify-start {
