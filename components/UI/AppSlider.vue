@@ -89,11 +89,13 @@ export default {
       this.checkDisabled()
     },
     checkDisabled() {
-      const wrapperWidth = this.$refs.wrapper.clientWidth
-      const contentWidth = this.$refs.content.clientWidth
-      this.disabledPrev = this.contentTranslateValue === 0
-      this.disabledNext =
-        this.contentTranslateValue === contentWidth - wrapperWidth
+      if (this.$refs.wrapper && this.$refs.content) {
+        const wrapperWidth = this.$refs.wrapper.clientWidth
+        const contentWidth = this.$refs.content.clientWidth
+        this.disabledPrev = this.contentTranslateValue === 0
+        this.disabledNext =
+          this.contentTranslateValue === contentWidth - wrapperWidth
+      }
     },
   },
 }
