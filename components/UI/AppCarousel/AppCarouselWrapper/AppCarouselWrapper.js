@@ -3,10 +3,12 @@ export default {
   props: {
     currentIndex: {
       type: Number,
-      required: 0,
+      default: 0,
     },
   },
   render(createElement, context) {
-    return createElement('div', [context.children[context.props.currentIndex]])
+    return createElement('div', context.data, [
+      context.children[context.props.currentIndex],
+    ])
   },
 }
